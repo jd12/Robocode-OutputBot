@@ -13,14 +13,19 @@ Write (or modify an existing) bot that prints information about the robot it's t
 
 You will probably want to modify an existing bot that you've written to date, rather than start over from scratch. The notes below make this assumption.
 
-1. Create two new private class variables inside your robot: a PrintStream (call it ps) and a NumberFormat (call it f).
-2. Near the top of your run() method, before the while (true) loop, set up the NumberFormat object like so:
+1. Add these import statements to to the top of your robot
+	```java
+	import java.io.*;
+	import java.text.NumberFormat;
+	```
+2. Create two new private class variables inside your robot: a PrintStream (call it ps) and a NumberFormat (call it f).
+3. Near the top of your run() method, before the while (true) loop, set up the NumberFormat object like so:
     1. Construct it, not with a constructor, but by calling the static `getNumberInstance` method like so:
         ```
         f = NumberFormat.getNumberInstance();
         ```
     2. Set the maximum number of decimal places you want to have shown by calling the `setMaximumFractionDigits()` method. 	(Hint: pass it a small number like, oh say, 1 or 2.)
-3. Just after you set up the NumberFormat class, set up the output file like so:
+4. Just after you set up the NumberFormat class, set up the output file like so:
 	1. Get a reference to the data file you can use by calling `getDataFile()` like so:
 		```
 		File file = getDataFile("output.dat");
@@ -31,13 +36,13 @@ You will probably want to modify an existing bot that you've written to date, ra
 
 	Note #2: You will need to handle the exception that could be thrown when constructing the new `PrintStream` by using a try..catch statement. An example of try..catch statement using `PrintStream` can be found [here](http://java2s.com/Tutorials/Java/Stream_Reader_Writer/How_to_use_Java_PrintStream.htm)
 
-4. Down in your `doGun()` method (or wherever you're doing your targeting) use the `PrintStream` object to print output to your file. Here's an example to get you started:
+5. Down in your `doGun()` method (or wherever you're doing your targeting) use the `PrintStream` object to print output to your file. Here's an example to get you started:
 	```java
 	ps.println("Tracking: " + enemy.getName() + " at (x,y) (" + 
 		f.format(enemy.getX()) + ", " + f.format(enemy.getY()) + ")");
 	```
 	
-5. You will need to close your output stream when the round is over. There are two ways the round can end for you: your bot dies, or your bot wins. To handle both of these, please ovverride both the onWin and onDeath methods and put the following code in there:
+6. You will need to close your output stream when the round is over. There are two ways the round can end for you: your bot dies, or your bot wins. To handle both of these, please ovverride both the onWin and onDeath methods and put the following code in there:
 	```java
 	if (ps != null) ps.close();
 	```
