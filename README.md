@@ -19,18 +19,25 @@ You will probably want to modify an existing bot that you've written to date, ra
         ```
         f = NumberFormat.getNumberInstance();
         ```
-    2. Set the maximum number of decimal places you want to have shown by calling the `setMaximumFractionDigits()` method. (Hint: pass it a small number like, oh say, 1 or 2.)
-Just after you set up the NumberFormat class, set up the output file like so:
-Get a reference to the data file you can use by calling getDataFile() like so:
-File file = getDataFile("output.dat");
-Construct a new RobocodeFileOutputStream, passing it the reference to the data file you just got, and pass the new RobocodeFileOutputStream to the constructor for a new PrintStream. (This is the "nested constructors" thing we talked about in class.) Store the new PrintStream in the 'ps' class variable you declared earlier.
-Note #1: Do not re-declare a local 'ps' var inside run(), it will create oodles of problems.
+    2. Set the maximum number of decimal places you want to have shown by calling the `setMaximumFractionDigits()` method. 	(Hint: pass it a small number like, oh say, 1 or 2.)
+3. Just after you set up the NumberFormat class, set up the output file like so:
+	1. Get a reference to the data file you can use by calling `getDataFile()` like so:
+		```
+		File file = getDataFile("output.dat");
+		```
+	2. Construct a new `RobocodeFileOutputStream`, passing it the reference to the data file you just got, and pass the new `RobocodeFileOutputStream` to the constructor for a new `PrintStream`. (Look [here](https://docs.oracle.com/javase/tutorial/essential/io/datastreams.html) for an example of nested constructors and see if you can translate it over to what you need for this step.) Store the new `PrintStream` in the 'ps' class variable you declared earlier.
+	Note #1: Do not re-declare a local 'ps' var inside `run()`, it will create oodles of problems.
 
-Note #2: You will need to handle the exception that could be thrown when constructing the new PrintStream by using a try..catch statement.
+	Note #2: You will need to handle the exception that could be thrown when constructing the new `PrintStream` by using a try..catch statement. An example of try..catch statement using `PrintStream` can be found [here](http://java2s.com/Tutorials/Java/Stream_Reader_Writer/How_to_use_Java_PrintStream.htm)
 
-Down in your doGun() method (or wherever you're doing your targeting) use the PrintStream object to print output to your file. Here's an example to get you started:
+4. Down in your `doGun()` method (or wherever you're doing your targeting) use the `PrintStream` object to print output to your file. Here's an example to get you started:
+	```java
 	ps.println("Tracking: " + enemy.getName() + " at (x,y) (" + 
 		f.format(enemy.getX()) + ", " + f.format(enemy.getY()) + ")");
+	```
 	
-You will need to close your output stream when the round is over. There are two ways the round can end for you: your bot dies, or your bot wins. To handle both of these, please ovverride both the onWin and onDeath methods and put the following code in there:
+5. You will need to close your output stream when the round is over. There are two ways the round can end for you: your bot dies, or your bot wins. To handle both of these, please ovverride both the onWin and onDeath methods and put the following code in there:
+	```java
 	if (ps != null) ps.close();
+	```
+
