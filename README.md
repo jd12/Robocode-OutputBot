@@ -51,7 +51,7 @@ You will probably want to modify an existing bot that you've written to date, ra
 
 ## Sample Output
 
-Here's an example of the kind of output I'm looking for. You might output a little bit more or a little bit less, but I'm expecting something along these lines.
+Here's an example of the kind of output I'm looking for. You might output a little bit more or a little bit less, but you should end up with something like this:
 
 ```
 Tracking: sample.Fire at (x,y) (384.1, 53.2)
