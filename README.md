@@ -49,6 +49,32 @@ You will probably want to modify an existing bot that you've written to date, ra
 	if (ps != null) ps.close();
 	```
 
+## Sample Output
+
+Here's an example of the kind of output I'm looking for. You might output a little bit more or a little bit less, but I'm expecting something along these lines.
+
+```
+Tracking: sample.Fire at (x,y) (384.1, 53.2)
+  firePower = 2.1, bulletSpeed = 13.7, time = 13
+  futureX = 384.1, futureY = 53.2, absDeg = 97.3, turn = 2.4
+
+Tracking: sample.Fire at (x,y) (384.1, 53.2)
+  firePower = 2.1, bulletSpeed = 13.7, time = 13
+  futureX = 384.1, futureY = 53.2, absDeg = 99.7, turn = 2.4
+
+Tracking: sample.Fire at (x,y) (384.1, 53.2)
+  firePower = 2.1, bulletSpeed = 13.7, time = 13
+  futureX = 384.1, futureY = 53.2, absDeg = 102.1, turn = 2.4
+
+Tracking: sample.RamFire at (x,y) (181.4, 197)
+  firePower = 3, bulletSpeed = 11, time = 9
+  futureX = 181.4, futureY = 197, absDeg = 344.2, turn = -117.9
+
+Tracking: sample.RamFire at (x,y) (181.4, 197)
+  firePower = 3, bulletSpeed = 11, time = 9
+  futureX = 181.4, futureY = 197, absDeg = 341, turn = -97.1
+
+```
 # Submission 
 
 Upload your robot that has OutputBot functionality into this repository
