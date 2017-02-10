@@ -14,10 +14,12 @@ Write (or modify an existing) bot that prints information about the robot it's t
 You will probably want to modify an existing bot that you've written to date, rather than start over from scratch. The notes below make this assumption.
 
 1. Add these import statements to to the top of your robot
+
 	```java
 	import java.io.*;
 	import java.text.NumberFormat;
 	```
+	
 2. Create two new private class variables inside your robot: a PrintStream (call it ps) and a NumberFormat (call it f).
 3. Near the top of your run() method, before the while (true) loop, set up the NumberFormat object like so:
     1. Construct it, not with a constructor, but by calling the static `getNumberInstance` method like so:
