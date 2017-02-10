@@ -26,6 +26,7 @@ You will probably want to modify an existing bot that you've written to date, ra
 		File file = getDataFile("output.dat");
 		```
 	2. Construct a new `RobocodeFileOutputStream`, passing it the reference to the data file you just got, and pass the new `RobocodeFileOutputStream` to the constructor for a new `PrintStream`. (Look [here](https://docs.oracle.com/javase/tutorial/essential/io/datastreams.html) for an example of nested constructors and see if you can translate it over to what you need for this step.) Store the new `PrintStream` in the 'ps' class variable you declared earlier.
+	
 	Note #1: Do not re-declare a local 'ps' var inside `run()`, it will create oodles of problems.
 
 	Note #2: You will need to handle the exception that could be thrown when constructing the new `PrintStream` by using a try..catch statement. An example of try..catch statement using `PrintStream` can be found [here](http://java2s.com/Tutorials/Java/Stream_Reader_Writer/How_to_use_Java_PrintStream.htm)
@@ -41,3 +42,6 @@ You will probably want to modify an existing bot that you've written to date, ra
 	if (ps != null) ps.close();
 	```
 
+# Submission 
+
+Upload your robot that has OutputBot functionality into this repository
