@@ -22,11 +22,9 @@ You will probably want to modify an existing bot that you've written to date, ra
 2. Create two new private class variables inside your robot: a [PrintStream](https://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html) (call it ps) and a [NumberFormat](https://docs.oracle.com/javase/7/docs/api/java/text/NumberFormat.html) (call it f).
 3. Near the top of your run() method, before the while (true) loop, set up the `NumberFormat` object like so:
     1. Construct it, not with a constructor, but by calling the static `getNumberInstance` method like so:
-        
-	```java
+        ```
         f = NumberFormat.getNumberInstance();
         ```
-	
     2. Set the maximum number of decimal places you want to have shown by calling the `setMaximumFractionDigits()` method. 	(Hint: pass it a small number like, oh say, 1 or 2.)
 4. Just after you set up the NumberFormat class, set up the output file like so:
 	1. Get a reference to the data file you can use by calling `getDataFile()` like so:
