@@ -20,8 +20,8 @@ You will probably want to modify an existing bot that you've written to date, ra
 	import java.text.NumberFormat;
 	```
 	
-2. Create two new private class variables inside your robot: a PrintStream (call it ps) and a NumberFormat (call it f).
-3. Near the top of your run() method, before the while (true) loop, set up the NumberFormat object like so:
+2. Create two new private class variables inside your robot: a [PrintStream](https://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html) (call it ps) and a [NumberFormat](https://docs.oracle.com/javase/7/docs/api/java/text/NumberFormat.html) (call it f).
+3. Near the top of your run() method, before the while (true) loop, set up the `NumberFormat` object like so:
     1. Construct it, not with a constructor, but by calling the static `getNumberInstance` method like so:
         ```
         f = NumberFormat.getNumberInstance();
