@@ -29,9 +29,10 @@ You will probably want to modify an existing bot that you've written to date, ra
     2. Set the maximum number of decimal places you want to have shown by calling the `setMaximumFractionDigits()` method. 	(Hint: pass it a small number like, oh say, 1 or 2.)
 4. Just after you set up the NumberFormat class, set up the output file like so:
 	1. Get a reference to the data file you can use by calling `getDataFile()` like so:
-		```
+		```java
 		File file = getDataFile("output.dat");
 		```
+		
 	2. Construct a new `RobocodeFileOutputStream`, passing it the reference to the data file you just got, and pass the new `RobocodeFileOutputStream` to the constructor for a new `PrintStream`. (Look [here](https://docs.oracle.com/javase/tutorial/essential/io/datastreams.html) for an example of nested constructors and see if you can translate it over to what you need for this step.) Store the new `PrintStream` in the 'ps' class variable you declared earlier.
 	
 	Note #1: Do not re-declare a local 'ps' var inside `run()`, it will create oodles of problems.
